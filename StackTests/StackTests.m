@@ -25,5 +25,10 @@
     XCTAssertTrue([stack[0] isEqualToString:@"Pushed an object"]);
 }
 
+- (void)testShouldThrowWhenPopAndStackIsEmpty {
+    NSMutableArray *stack =[NSMutableArray array];
+    
+    XCTAssertThrows([stack pop]);
+}
 
 @end

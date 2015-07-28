@@ -6,4 +6,13 @@
     [self addObject:object];
 }
 
+- (id)pop {
+    
+    if([self count] == 0)
+    {
+        [NSException raise:@"Stack is Empty" format:@"%@", @"Stack is Empty"];
+    }
+    return nil;
+}
+
 @end

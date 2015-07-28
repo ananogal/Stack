@@ -3,5 +3,6 @@
 @interface NSMutableArray (Stack)
 
 - (void)push:(id)object;
+- (id)pop;
 
 @end
