@@ -7,9 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		937FD2181B67C39400DEFCF3 /* Stack.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 937FD2171B67C39400DEFCF3 /* Stack.h */; };
-		937FD21A1B67C39400DEFCF3 /* Stack.m in Sources */ = {isa = PBXBuildFile; fileRef = 937FD2191B67C39400DEFCF3 /* Stack.m */; };
+		937FD2181B67C39400DEFCF3 /* NSMutableArray+Stack.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 937FD2171B67C39400DEFCF3 /* NSMutableArray+Stack.h */; };
+		937FD21A1B67C39400DEFCF3 /* NSMutableArray+Stack.m in Sources */ = {isa = PBXBuildFile; fileRef = 937FD2191B67C39400DEFCF3 /* NSMutableArray+Stack.m */; };
 		937FD2201B67C39400DEFCF3 /* libStack.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 937FD2141B67C39400DEFCF3 /* libStack.a */; };
+		937FD22F1B67C51300DEFCF3 /* StackTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 937FD22E1B67C51300DEFCF3 /* StackTests.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,7 +30,7 @@
 			dstPath = "include/$(PRODUCT_NAME)";
 			dstSubfolderSpec = 16;
 			files = (
-				937FD2181B67C39400DEFCF3 /* Stack.h in CopyFiles */,
+				937FD2181B67C39400DEFCF3 /* NSMutableArray+Stack.h in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -37,10 +38,11 @@
 
 /* Begin PBXFileReference section */
 		937FD2141B67C39400DEFCF3 /* libStack.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libStack.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		937FD2171B67C39400DEFCF3 /* Stack.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Stack.h; sourceTree = "<group>"; };
-		937FD2191B67C39400DEFCF3 /* Stack.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Stack.m; sourceTree = "<group>"; };
+		937FD2171B67C39400DEFCF3 /* NSMutableArray+Stack.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSMutableArray+Stack.h"; sourceTree = "<group>"; };
+		937FD2191B67C39400DEFCF3 /* NSMutableArray+Stack.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSMutableArray+Stack.m"; sourceTree = "<group>"; };
 		937FD21F1B67C39400DEFCF3 /* StackTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StackTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		937FD2251B67C39400DEFCF3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		937FD22E1B67C51300DEFCF3 /* StackTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StackTests.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,8 +85,8 @@
 		937FD2161B67C39400DEFCF3 /* Stack */ = {
 			isa = PBXGroup;
 			children = (
-				937FD2171B67C39400DEFCF3 /* Stack.h */,
-				937FD2191B67C39400DEFCF3 /* Stack.m */,
+				937FD2171B67C39400DEFCF3 /* NSMutableArray+Stack.h */,
+				937FD2191B67C39400DEFCF3 /* NSMutableArray+Stack.m */,
 			);
 			path = Stack;
 			sourceTree = "<group>";
@@ -93,6 +95,7 @@
 			isa = PBXGroup;
 			children = (
 				937FD2241B67C39400DEFCF3 /* Supporting Files */,
+				937FD22E1B67C51300DEFCF3 /* StackTests.m */,
 			);
 			path = StackTests;
 			sourceTree = "<group>";
@@ -193,7 +196,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				937FD21A1B67C39400DEFCF3 /* Stack.m in Sources */,
+				937FD21A1B67C39400DEFCF3 /* NSMutableArray+Stack.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -201,6 +204,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				937FD22F1B67C51300DEFCF3 /* StackTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -325,6 +329,12 @@
 				);
 				INFOPLIST_FILE = StackTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-framework",
+					XCTest,
+					"-all_load",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -339,6 +349,12 @@
 				);
 				INFOPLIST_FILE = StackTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-framework",
+					XCTest,
+					"-all_load",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
