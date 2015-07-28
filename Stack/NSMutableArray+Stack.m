@@ -12,7 +12,11 @@
     {
         [NSException raise:@"Stack is Empty" format:@"%@", @"Stack is Empty"];
     }
-    return nil;
+    
+    id headObject = [[self objectAtIndex:0] copy];
+    [self removeObjectAtIndex:0];
+    
+    return headObject;
 }
 
 @end

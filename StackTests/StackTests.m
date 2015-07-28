@@ -8,17 +8,20 @@
 
 @implementation StackTests
 
+NSMutableArray *stack;
+
 - (void)setUp {
     [super setUp];
+    
+    stack = [NSMutableArray array];
 }
 
 - (void)tearDown {
+    stack = nil;
     [super tearDown];
 }
 
 - (void)testShouldPushAnObjectTotheStack {
-    
-    NSMutableArray *stack = [NSMutableArray array];
     
     [stack push:@"Pushed an object"];
     
@@ -26,9 +29,19 @@
 }
 
 - (void)testShouldThrowWhenPopAndStackIsEmpty {
-    NSMutableArray *stack =[NSMutableArray array];
     
     XCTAssertThrows([stack pop]);
+}
+
+- (void)testShouldPopAnElementFromStack {
+    
+    [stack push:@"Object 1"];
+    [stack push:@"Object 2"];
+    [stack push:@"Object 3"];
+    
+    id result = [stack pop];
+    
+    XCTAssertTrue([result isEqualToString:@"Object 1"]);
 }
 
 @end
