@@ -1,5 +1,9 @@
-#import "Stack.h"
+#import "NSMutableArray+Stack.h"
 
-@implementation Stack
+@implementation NSMutableArray (Stack)
+
+- (void)push:(id)object {
+    [self addObject:object];
+}
 
 @end
